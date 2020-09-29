@@ -1,0 +1,63 @@
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (1, 'lucas.david', '$2a$10$5GDsI7cPU3ARdjLUUy30Sui/fFlilTKJ6zdR1Ih4lYjywo1D1773O', TRUE, 'Lucas', 'David', 'lucas.david@paris-saclay-universite.fr', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (2, 'anandou.candassamy', '$2y$10$2P4q/1ipl1t7WeQopXrsee0V9rSrQPpnjU6gz.bQchf3gNYZR3iuu', TRUE, 'Anandou', 'Candassamy','anandou.candassamy@paris-saclay-universite.fr', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (3, 'justine-thanh.nguyen-hoang-tung', '$2y$10$0hNpZWWPbEbFFyXAOqDO8eUh9iWwlH9JebvnI44NQrFNHOXXbteaO', TRUE, 'Justine Thanh', 'Nguyen Hoang Tung', 'justine-thanh.nguyen-hoang-tung@paris-saclay-universite.fr', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (4, 'theo.legras', '$2y$10$uB.zAjIufvTiE/GEYzbWPO90HsG.w7WzoDEfvtgA/M3qxywcXQL16', TRUE, 'Théo', 'Legras', 'theo.legras@paris-saclay-universite.fr', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (5, 'abdoulaye.diongue', '$2y$10$0hNpZWWPbEbFFyXAOqDO8eUh9iWwlH9JebvnI44NQrFNHOXXbteaO', TRUE, 'Abdoulaye', 'Diongue', 'abdoulaye.diongue@paris-saclay-universite.fr', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (6, 'sullivan.honnet', '$2y$10$hrs0MYPyauJN8soAsO7psuzPGlWjdo7k1A8hDezCtj7QTapLO6QsC', TRUE, 'Sullivan', 'Honnet', 'sullivan.honnet@paris-saclay-universite.fr', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (7, 'drauhl2810', '$2y$10$hrs0MYPyauJN8soAsO7psuzPGlWjdo7k1A8hDezCtj7QTapLO6QsC', TRUE, 'Drake', 'Uhlah', 'drake.uhlah@urss.com', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (8, 'friori1011', '$2y$10$hrs0MYPyauJN8soAsO7psuzPGlWjdo7k1A8hDezCtj7QTapLO6QsC', TRUE, 'Frigg', 'Orist', 'frigg.orist@urss.com', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (9, 'dusbat1502', '$2y$10$hrs0MYPyauJN8soAsO7psuzPGlWjdo7k1A8hDezCtj7QTapLO6QsC', TRUE, 'Dustin', 'Bates', 'dustin.bates@urss.com', null, null, null, null)
+INSERT INTO "user" (user_id, username, password, active, first_name, last_name, email, born_on, hired_on, phone, address_id) VALUES (10, 'alfred.pennyworth', '$2y$10$hrs0MYPyauJN8soAsO7psuzPGlWjdo7k1A8hDezCtj7QTapLO6QsC', TRUE, 'Alfred', 'Pennyworth', 'alfred.pennyworth@wayne-enterprise.com', null, null, null, null)
+
+INSERT INTO address (address_id, street, city, zip_code) VALUES (1, 'Maison de l’Ingénieur - Bâtiment 620, Rue Louis de Broglie', 'Orsay', '91405')
+
+INSERT INTO skill (skill_id, name) VALUES (1, 'Électricien')
+INSERT INTO skill (skill_id, name) VALUES (2, 'Plombier')
+INSERT INTO skill (skill_id, name) VALUES (3, 'Frigoriste')
+INSERT INTO skill (skill_id, name) VALUES (4, 'Informaticien')
+INSERT INTO skill (skill_id, name) VALUES (5, 'Mécanicien')
+
+INSERT INTO company (company_id, name, ceo_name, ceo_email, headquarter, archived) VALUES (1, 'Polytech Paris-Saclay', 'Yves Bernard', 'contact.polytech@u-psud.fr', 1, FALSE)
+INSERT INTO company (company_id, name, ceo_name, ceo_email, headquarter, archived) VALUES (2, 'Wayne Enterprise', 'Bruce Wayne', 'batman@wayne.com', null, FALSE)
+
+INSERT INTO operator (user_id) VALUES (1)
+INSERT INTO operator (user_id) VALUES (7)
+INSERT INTO operator (user_id) VALUES (8)
+INSERT INTO technician (user_id) VALUES (1)
+INSERT INTO technician (user_id) VALUES (7)
+INSERT INTO technician (user_id) VALUES (8)
+INSERT INTO technician_manager (user_id, supervised_technician) VALUES (1, 7)
+INSERT INTO technician_manager (user_id, supervised_technician) VALUES (7, 8)
+
+INSERT INTO customer (user_id, employer) VALUES (10, 2)
+
+INSERT INTO user_authority (user_id, authority) VALUES (1, 'Administrator')
+INSERT INTO user_authority (user_id, authority) VALUES (1, 'Operator')
+INSERT INTO user_authority (user_id, authority) VALUES (1, 'Technician')
+INSERT INTO user_authority (user_id, authority) VALUES (1, 'TechnicianManager')
+INSERT INTO user_authority (user_id, authority) VALUES (2, 'Administrator')
+INSERT INTO user_authority (user_id, authority) VALUES (3, 'Administrator')
+INSERT INTO user_authority (user_id, authority) VALUES (4, 'Administrator')
+INSERT INTO user_authority (user_id, authority) VALUES (5, 'Administrator')
+INSERT INTO user_authority (user_id, authority) VALUES (6, 'Administrator')
+INSERT INTO user_authority (user_id, authority) VALUES (7, 'TechnicianManager')
+INSERT INTO user_authority (user_id, authority) VALUES (8, 'Technician')
+INSERT INTO user_authority (user_id, authority) VALUES (9, 'Operator')
+INSERT INTO user_authority (user_id, authority) VALUES (10, 'Customer')
+
+INSERT INTO technician_skill (user_id, skill_id) VALUES (1, 2)
+INSERT INTO technician_skill (user_id, skill_id) VALUES (1, 4)
+INSERT INTO technician_skill (user_id, skill_id) VALUES (7, 1)
+INSERT INTO technician_skill (user_id, skill_id) VALUES (8, 3)
+
+INSERT INTO category (category_id, name) VALUES (1, 'End of the world')
+
+INSERT INTO ticket (ticket_id, title, status, type, category, priority, opened_on, last_modified_on, description, archived, claimant, company, editor) VALUES (1, 'COVID-19', 'Opened', 'Incident', 1, 'High', now(), now(), 'Épidémie de Coronavirus dans les bureaux... On va tous mourir ! :', false, 10, 2, 1)
+
+INSERT INTO ticket_skill (ticket_id, skill_id) VALUES (1, 1)
+INSERT INTO ticket_skill (ticket_id, skill_id) VALUES (1, 2)
+INSERT INTO ticket_skill (ticket_id, skill_id) VALUES (1, 3)
+INSERT INTO ticket_skill (ticket_id, skill_id) VALUES (1, 4)
+
+INSERT INTO ticket_technician (ticket_id, user_id) VALUES (1, 1)
+INSERT INTO ticket_technician (ticket_id, user_id) VALUES (1, 8)

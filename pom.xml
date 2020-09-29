@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.urss</groupId>
+    <artifactId>urss</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <!-- scope: all -->
+        <hibernate.version>5.4.10.Final</hibernate.version> <!-- Persistence framework for relational databases (JPA implementation). -->
+        <jackson.version>2.10.2</jackson.version> <!-- JSON parser for Java. -->
+        <jbcrypt.version>0.3m</jbcrypt.version> <!-- Implementation for the bcrypt password hashing function in Java. -->
+        <jjwt.version>3.9.0</jjwt.version> <!-- Library for creating and parsing JSON Web Tokens (JWTs) in Java. -->
+        <jersey.version>2.30</jersey.version> <!-- JAX-RS reference implementation for creating RESTful web services in Java. -->
+        <postgresql.version>42.2.9</postgresql.version> <!-- Relational database drivers. -->
+        <undertow.version>2.0.1.Final</undertow.version> <!-- Servlet container. -->
+        <weld.version>3.1.3.Final</weld.version> <!-- CDI reference implementation. -->
+
+        <!-- scope: test -->
+        <junit.version>4.13</junit.version>
+        <arquillian.version>1.6.0.Final</arquillian.version> <!-- Testing framework (under JUnit 4). -->
+        <hamcrest.version>1.3</hamcrest.version>
+
+    </properties>
+
+    <dependencies>
+        <!-- scope: all -->
+            <!-- JetBrains Annotations -->
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>16.0.1</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!-- Hibernate -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>5.4.10.Final</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.json</artifactId>
+                <version>1.1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr353</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.java-json-tools</groupId>
+                <artifactId>json-patch</artifactId>
+                <version>1.12</version>
+            </dependency>
+
+        <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-parameter-names</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Java BCrypt -->
+            <dependency>
+                <groupId>org.mindrot</groupId>
+                <artifactId>jbcrypt</artifactId>
+                <version>${jbcrypt.version}</version>
+            </dependency>
+
+            <!-- Java JWT (JSON Web Tokens) -->
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- Jersey -->
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.ext.cdi</groupId>
+                <artifactId>jersey-cdi1x</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.ext.cdi</groupId>
+                <artifactId>jersey-cdi1x-servlet</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.inject</groupId>
+                <artifactId>jersey-hk2</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-json-jackson</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+
+            <!-- Undertow -->
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-core</artifactId>
+                <version>${undertow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-servlet</artifactId>
+                <version>${undertow.version}</version>
+            </dependency>
+
+            <!-- Weld -->
+            <dependency>
+                <groupId>org.jboss.weld.servlet</groupId>
+                <artifactId>weld-servlet-core</artifactId>
+                <version>${weld.version}</version>
+            </dependency>
+
+            <!-- JDBC Driver -->
+                <!-- PostgreSQL -->
+                <dependency>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                    <version>${postgresql.version}</version>
+                </dependency>
+
+                <!-- mySQL -->
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>8.0.18</version>
+                </dependency>
+
+            <!-- CXF
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-extension-providers</artifactId>
+                <version>3.3.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>3.3.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+                <version>3.3.3</version>
+            </dependency> -->
+
+            <!-- ?
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20190722</version>
+            </dependency> -->
+
+            <!-- EL API -->
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+        <!-- scope: test -->
+            <!-- JUnit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- Arquillian -->
+            <dependency>
+                <groupId>org.jboss.arquillian.junit</groupId>
+                <artifactId>arquillian-junit-container</artifactId>
+                <version>${arquillian.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.container</groupId>
+                <artifactId>undertow-embedded</artifactId>
+                <version>1.0.0.Alpha2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20190722</version>
+        </dependency>
+    </dependencies>
+
+</project>
