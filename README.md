@@ -23,7 +23,7 @@ See the [curl] scripts below with the REST API supported operations:
 curl -X POST 'http://localhost:8080/api/a' \
     -H "Content-Type: application/json" \
     --data '{ 
-         "username": "lucas.david", "password": "secret-password"
+         "username": "a.diongue", "password": "secret-password"
     }'
 ```
 
@@ -84,8 +84,8 @@ curl -X POST 'http://localhost:8080/api/u' \
     --data -d '{ 
         "firstName": "Lucas", "lastName": "David", 
 <<<<<<< HEAD
-        "email": "lucas.david@universite-paris-saclay.fr", 
-        "username": "lucas.david", "password": "secret-password"
+        "email": "abdoulaye.diongued@universite-paris-saclay.fr", 
+        "username": "abdoulaye.diongue", "password": "secret-password"
 =======
         "email": "lucas.david@u-psud.fr", 
         "username": "lucas.david", "password": "secret-password"
@@ -102,7 +102,7 @@ curl -X POST 'http://localhost:8080/api/u' \
 curl -X PATCH 'http://localhost:8080/api/u/<user>' \
     -H "Content-Type: application/merge-patch+json" \
     --data '{ 
-        "email": "lucas.david@universite-paris-saclay.fr"
+        "email": "abdoulaye.diongue@universite-paris-saclay.fr"
 >>>>>>> master
     }'
 ```
